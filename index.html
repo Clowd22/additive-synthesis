@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>音響波形の加算合成実験</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ヘッダーの作成 -->
+    <header class="site-header">
+      <img src="images/header_Logo.png" alt="Site Logo" class="site-logo" />
+      <h1>音響波形の加算合成実験</h1>
+    </header>
+
+    <!-- 説明セクション -->
+    <div class="description-container" id="descriptionContainer">
+      <button class="close-button" id="closeDescription">×</button>
+      <h2>アプリの使い方</h2>
+      <p>
+        このサイトでは、音響波形の加算合成実験を行うことができます。基本周波数、加算する高調波の数、サンプリング周波数を設定し、さまざまな波形を作成・再生して音の違いを体験できます。
+      </p>
+      <h3>主な機能</h3>
+      <ul>
+        <li>基本周波数、加算する高調波の数、サンプリング周波数の設定</li>
+        <li>正弦波、三角波、矩形波、のこぎり波の生成</li>
+        <li>生成した波形の再生とダウンロード</li>
+      </ul>
+    </div>
+
+    <!-- 波形生成ビュー -->
+    <div class="wave-form">
+      <label for="frequency">基本周波数 (Hz):</label>
+      <select id="frequency">
+        <option value="440">440Hz</option>
+        <option value="444">444Hz</option>
+      </select>
+
+      <label for="harmonics">加算する高調波の数:</label>
+      <select id="harmonics">
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="7">7</option>
+        <option value="9">9</option>
+        <option value="11">11</option>
+      </select>
+
+      <label for="wave_type">波形の種類:</label>
+      <select id="wave_type">
+        <option value="sine">正弦波</option>
+        <option value="triangle">三角波</option>
+        <option value="square">矩形波</option>
+        <option value="sawtooth">のこぎり波</option>
+      </select>
+
+      <button id="playButton">波形を再生</button>
+      <button id="downloadButton">音源をダウンロード</button>
+  </div>
+
+    <!-- 再生・ダウンロードビュー -->
+    <div class="waveplay-container">
+      <h2>生成した波形を再生</h2>
+      <audio id="audioPlayer" controls>
+        あなたのブラウザはaudio要素をサポートしていません。
+      </audio>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
